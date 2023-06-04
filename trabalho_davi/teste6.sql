@@ -62,14 +62,6 @@ ENGINE = InnoDB;
 -- Definition of table `apartamento`
 --
 
-
-/*!40000 ALTER TABLE `apartamento` DISABLE KEYS */;
-INSERT INTO `apartamento` (`arcondicionado`,`suite`,`andar`,`idmovel`) VALUES 
- (1,1,1,1),
- (2,1,1,2);
-/*!40000 ALTER TABLE `apartamento` ENABLE KEYS */;
-
-
 --
 -- Definition of table `bairro`
 --
@@ -135,6 +127,22 @@ CREATE UNIQUE INDEX `idcidade_UNIQUE` ON `mydb`.`cidade` (`idcidade` ASC) ;
 
 CREATE INDEX `fk_cidade_estado1_idx` ON `mydb`.`cidade` (`idcidade` ASC) ;
 
+--
+-- Definition of table `cidade`
+--
+
+
+/*!40000 ALTER TABLE `cidade` DISABLE KEYS */;
+INSERT INTO `cidade` (`idcidade`,`nome`,`idestado`) VALUES 
+ (1,'Feijó',1),
+ (2,'Palmeira dos Índios',2),
+ (3, 'Salvador',3);
+/*!40000 ALTER TABLE `cidade` ENABLE KEYS */;
+
+
+--
+-- Definition of table `contrato`
+--
 
 -- -----------------------------------------------------
 -- Table `mydb`.`contrato`
@@ -189,6 +197,23 @@ CREATE TABLE IF NOT EXISTS `mydb`.`estado` (
 ENGINE = InnoDB;
 
 CREATE UNIQUE INDEX `idestado_UNIQUE` ON `mydb`.`estado` (`idestado` ASC) ;
+
+--
+-- Definition of table `estado`
+--
+
+
+/*!40000 ALTER TABLE `estado` DISABLE KEYS */;
+INSERT INTO `estado` (`idestado`,`nome`) VALUES 
+(1,'Acre'),
+(2,'Amapá'),
+(3,'Bahia');
+/*!40000 ALTER TABLE `estado` ENABLE KEYS */;
+
+
+--
+-- Definition of table `imagens`
+--
 
 
 -- -----------------------------------------------------
