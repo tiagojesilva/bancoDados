@@ -46,9 +46,9 @@ ENGINE = InnoDB;
 
 /*!40000 ALTER TABLE `Login` DISABLE KEYS */;
 INSERT INTO `Login` (`idLogin`,`nome`,`senha`,`tipo_usuario`) VALUES 
- (1,'Daniel@','D@n13l4',1),
- (2,'Dav1','D4v1',2),
- (3,'Tiag0','T14g0',3);
+ (1,'joao','jo@013l4',1),
+ (2,'hernandes','herN4nd3s',),
+ (3,'tiago','T14g0',2);
 /*!40000 ALTER TABLE `Login` ENABLE KEYS */;
 
 
@@ -141,9 +141,9 @@ ENGINE = InnoDB;
 
 /*!40000 ALTER TABLE `casa` DISABLE KEYS */;
 INSERT INTO `casa` (`piscina`,`idimovel`,`porao`) VALUES 
- (1,1,'Nulemba'),
- (2,2,'Salamandra'),
- (3,3,'Sucuri');
+ (1,1,'nao'),
+ (2,2,'sim'),
+ (3,3,'sim');
 /*!40000 ALTER TABLE `casa` ENABLE KEYS */;
 
 
@@ -297,9 +297,9 @@ CREATE INDEX `fk_imagens_imovel1_idx` ON `mydb`.`imagens` (`idimovel` ASC) ;
 
 /*!40000 ALTER TABLE `imagens` DISABLE KEYS */;
 INSERT INTO `imagens` (`idimagens`,`conteudo`,`idimovel`,`descricao`) VALUES 
- (1,'C:\Users\Desktop\Images\professora.jpg',1,'Foto da professora'),
- (2,'C:\Users\Desktop\Images\davi.jpg',2,'Foto de Davi'),
- (3,'C:\Users\Desktop\Images\tiago.jpg',3,'Foto de Tiago');
+ (1,'C:\Users\Desktop\Images\imagem1.jpg',1,'Imagem da sala'),
+ (2,'C:\Users\Desktop\Images\imagem2.jpg',2,'Imagem da cozinha'),
+ (3,'C:\Users\Desktop\Images\imagem3.jpg',3,'Imagem do quarto');
 /*!40000 ALTER TABLE `imagens` ENABLE KEYS */;
 
 
@@ -337,8 +337,8 @@ CREATE INDEX `fk_imovel_predio1_idx` ON `mydb`.`imovel` (`idpredio` ASC) ;
 /*!40000 ALTER TABLE `imovel` DISABLE KEYS */;
 INSERT INTO `imovel` (`idimovel`,`quantidade_quartos`,`valor_condominio`,`valor_aluguel`,`numero_do_local`,`data_vencimento_aluguel`,`idpredio`,`metros_quadrados`,`garagem`) VALUES 
 (1,2,900.00,100.00,10,'2020-10-01',1,20.00,1),
-(2,2,900.00,100.00,10,'2020-10-01',1,20.00,1),
-(3,1,800.00,90.00,10,'2020-10-01',1,20.00,0);
+(2,2,900.00,100.00,10,'2020-09-01',1,20.00,1),
+(3,1,800.00,90.00,10,'2020-08-01',1,20.00,0);
 /*!40000 ALTER TABLE `imovel` ENABLE KEYS */;
 
 -- -----------------------------------------------------
@@ -545,9 +545,9 @@ CREATE INDEX `fk_proprietario_Login1_idx` ON `mydb`.`proprietario` (`Login_idLog
 
 /*!40000 ALTER TABLE `proprietario` DISABLE KEYS */;
 INSERT INTO `proprietario` (`idproprietario`,`nome`,`cpf`,`chave_pix`,`Login_idLogin`) VALUES 
- (1,'Daniela',12365487,'daniela@uneb.com.br',1),
- (2,'Davi',65498712,'davi@gmail.com',2),
- (3,'Tiago',95135745,'tiago@outlook.com',3);
+ (1,'João Santos',12365487,'joao@email.com',1),
+ (2,'Hernandes Santiago',65498712,'hernandes"email.com',2),
+ (3,'Maurício Novais',95135745,'mauricio@email.com',3);
 /*!40000 ALTER TABLE `proprietario` ENABLE KEYS */;
 
 SET SQL_MODE=@OLD_SQL_MODE;
