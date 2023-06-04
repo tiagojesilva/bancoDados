@@ -87,6 +87,12 @@ CREATE UNIQUE INDEX `idbairro_UNIQUE` ON `mydb`.`bairro` (`idbairro` ASC) ;
 
 CREATE INDEX `fk_bairro_cidade1_idx` ON `mydb`.`bairro` (`idcidade` ASC) ;
 
+/*!40000 ALTER TABLE `bairro` DISABLE KEYS */;
+INSERT INTO `bairro` (`idbairro`,`nome`,`idcidade`) VALUES 
+(1,'Bairro_A',1),
+(2,'Bairro_B',2),
+(3,'Bairro_C',3);
+/*!40000 ALTER TABLE `bairro` ENABLE KEYS */;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`casa`
@@ -253,7 +259,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`imovel` (
   `numero_do_local` INT(4) UNSIGNED NOT NULL,
   `data_vencimento_aluguel` DATE NOT NULL,
   `idpredio` INT UNSIGNED NOT NULL,
-  `metros_quadrados` DECIMAL(3,2) UNSIGNED NOT NULL,
+  `metros_quadrados` DECIMAL(5,2) UNSIGNED NOT NULL,
   `garagem` TINYINT(1) UNSIGNED NULL,
   PRIMARY KEY (`idimovel`),
   CONSTRAINT `fk_imovel_predio1`
@@ -267,6 +273,12 @@ CREATE UNIQUE INDEX `idimovel_UNIQUE` ON `mydb`.`imovel` (`idimovel` ASC) ;
 
 CREATE INDEX `fk_imovel_predio1_idx` ON `mydb`.`imovel` (`idpredio` ASC) ;
 
+/*!40000 ALTER TABLE `imovel` DISABLE KEYS */;
+INSERT INTO `imovel` (`idimovel`,`quantidade_quartos`,`valor_condominio`,`valor_aluguel`,`numero_do_local`,`data_vencimento_aluguel`,`idpredio`,`metros_quadrados`,`garagem`) VALUES 
+(1,2,900.00,100.00,10,'2020-10-01',1,20.00,1),
+(2,2,900.00,100.00,10,'2020-10-01',1,20.00,1),
+(3,1,800.00,90.00,10,'2020-10-01',1,20.00,0);
+/*!40000 ALTER TABLE `imovel` ENABLE KEYS */;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`inquilino`
@@ -372,22 +384,6 @@ CREATE UNIQUE INDEX `idpredio_UNIQUE` ON `mydb`.`predio` (`idpredio` ASC) ;
 
 CREATE INDEX `fk_predio_bairro_idx` ON `mydb`.`predio` (`idbairro` ASC) ;
 
---
--- Definition of table `predio`
---
-
-
-/*!40000 ALTER TABLE `predio` DISABLE KEYS */;
-INSERT INTO `predio` (`idpredio`,`nome`,`Endereco`,`CEP`,`quantidade_apartamentos`,`idbairro`) VALUES 
- (1,'Arauana','Tv. Araci',12345678,4,1),
- (2,'Lacina','Rua das Lacinas',25148795,4,2),
- (3,'Irani','Rua das Irani',65432158,5,3);
-/*!40000 ALTER TABLE `predio` ENABLE KEYS */;
-
-
---
--- Definition of table `proprietario`
---
 
 -- -----------------------------------------------------
 -- Table `mydb`.`proprietario`
