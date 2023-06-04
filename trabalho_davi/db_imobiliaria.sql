@@ -269,6 +269,22 @@ CREATE UNIQUE INDEX `idimagens_UNIQUE` ON `mydb`.`imagens` (`idimagens` ASC) ;
 
 CREATE INDEX `fk_imagens_imovel1_idx` ON `mydb`.`imagens` (`idimovel` ASC) ;
 
+--
+-- Definition of table `imagens`
+--
+
+
+/*!40000 ALTER TABLE `imagens` DISABLE KEYS */;
+INSERT INTO `imagens` (`idimagens`,`conteudo`,`idimovel`,`descricao`) VALUES 
+ (1,'C:\Users\Desktop\Images\professora.jpg',1,'Foto da professora'),
+ (2,'C:\Users\Desktop\Images\davi.jpg',2,'Foto de Davi'),
+ (3,'C:\Users\Desktop\Images\tiago.jpg',3,'Foto de Tiago');
+/*!40000 ALTER TABLE `imagens` ENABLE KEYS */;
+
+
+--
+-- Definition of table `imovel`
+--
 
 -- -----------------------------------------------------
 -- Table `mydb`.`imovel`
@@ -383,6 +399,21 @@ CREATE TABLE IF NOT EXISTS `mydb`.`ponto_comercial` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+--
+-- Definition of table `ponto_comercial`
+--
+
+
+/*!40000 ALTER TABLE `ponto_comercial` DISABLE KEYS */;
+INSERT INTO `ponto_comercial` (`localizacao`,`idimovel`) VALUES 
+ (1,1),
+ (2,2);
+/*!40000 ALTER TABLE `ponto_comercial` ENABLE KEYS */;
+
+
+--
+-- Definition of table `predio`
+--
 
 -- -----------------------------------------------------
 -- Table `mydb`.`predio`
