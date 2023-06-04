@@ -87,6 +87,12 @@ CREATE UNIQUE INDEX `idbairro_UNIQUE` ON `mydb`.`bairro` (`idbairro` ASC) ;
 
 CREATE INDEX `fk_bairro_cidade1_idx` ON `mydb`.`bairro` (`idcidade` ASC) ;
 
+/*!40000 ALTER TABLE `bairro` DISABLE KEYS */;
+INSERT INTO `bairro` (`idbairro`,`nome`,`idcidade`) VALUES 
+(1,'Bairro_A',1),
+(2,'Bairro_B',2),
+(3,'Bairro_C',3);
+/*!40000 ALTER TABLE `bairro` ENABLE KEYS */;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`casa`
@@ -372,22 +378,6 @@ CREATE UNIQUE INDEX `idpredio_UNIQUE` ON `mydb`.`predio` (`idpredio` ASC) ;
 
 CREATE INDEX `fk_predio_bairro_idx` ON `mydb`.`predio` (`idbairro` ASC) ;
 
---
--- Definition of table `predio`
---
-
-
-/*!40000 ALTER TABLE `predio` DISABLE KEYS */;
-INSERT INTO `predio` (`idpredio`,`nome`,`Endereco`,`CEP`,`quantidade_apartamentos`,`idbairro`) VALUES 
- (1,'Arauana','Tv. Araci',12345678,4,1),
- (2,'Lacina','Rua das Lacinas',25148795,4,2),
- (3,'Irani','Rua das Irani',65432158,5,3);
-/*!40000 ALTER TABLE `predio` ENABLE KEYS */;
-
-
---
--- Definition of table `proprietario`
---
 
 -- -----------------------------------------------------
 -- Table `mydb`.`proprietario`
