@@ -87,6 +87,12 @@ CREATE UNIQUE INDEX `idbairro_UNIQUE` ON `mydb`.`bairro` (`idbairro` ASC) ;
 
 CREATE INDEX `fk_bairro_cidade1_idx` ON `mydb`.`bairro` (`idcidade` ASC) ;
 
+/*!40000 ALTER TABLE `bairro` DISABLE KEYS */;
+INSERT INTO `bairro` (`idbairro`,`nome`,`idcidade`) VALUES 
+(1,'Bairro_A',1),
+(2,'Bairro_B',2),
+(3,'Bairro_C',3);
+/*!40000 ALTER TABLE `bairro` ENABLE KEYS */;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`casa`
