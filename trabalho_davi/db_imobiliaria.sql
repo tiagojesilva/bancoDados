@@ -39,7 +39,22 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Login` (
   PRIMARY KEY (`idLogin`))
 ENGINE = InnoDB;
 
+--
+-- Definition of table `Login`
+--
 
+
+/*!40000 ALTER TABLE `Login` DISABLE KEYS */;
+INSERT INTO `Login` (`idLogin`,`nome`,`senha`,`tipo_usuario`) VALUES 
+ (1,'Daniel@','D@n13l4',1),
+ (2,'Dav1','D4v1',2),
+ (3,'Tiag0','T14g0',3);
+/*!40000 ALTER TABLE `Login` ENABLE KEYS */;
+
+
+--
+-- Definition of table `apartamento`
+--
 -- -----------------------------------------------------
 -- Table `mydb`.`apartamento`
 -- -----------------------------------------------------
@@ -350,7 +365,12 @@ CREATE UNIQUE INDEX `idinquilino_UNIQUE` ON `mydb`.`inquilino` (`idinquilino` AS
 
 CREATE INDEX `fk_inquilino_Login1_idx` ON `mydb`.`inquilino` (`Login_idLogin` ASC) ;
 
-
+/*!40000 ALTER TABLE `inquilino` DISABLE KEYS */;
+INSERT INTO `inquilino` ( `idinquilino`,`nome`, `celular1`, `celular2`, `e-mail`,`Login_idLogin` ) VALUES 
+(1,'Davi Barbosa',999999991,988888881,'davi@email.com',1),
+(2,'Tiago Silva',999999992,988888882,'tiago@email.com',2),
+(3,'Adeonita Souza',999999993,988888883,'ade@email.com',3);
+/*!40000 ALTER TABLE `inquilino` ENABLE KEYS */;
 -- -----------------------------------------------------
 -- Table `mydb`.`pessoa_fisica`
 -- -----------------------------------------------------
