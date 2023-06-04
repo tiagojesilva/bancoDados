@@ -155,7 +155,6 @@ CREATE INDEX `fk_cidade_estado1_idx` ON `mydb`.`cidade` (`idcidade` ASC) ;
 -- Definition of table `cidade`
 --
 
-
 /*!40000 ALTER TABLE `cidade` DISABLE KEYS */;
 INSERT INTO `cidade` (`idcidade`,`nome`,`idestado`) VALUES 
  (1,'Feijó',1),
@@ -181,7 +180,6 @@ CREATE TABLE IF NOT EXISTS `mydb`.`contrato` (
   `idimovel` INT UNSIGNED NOT NULL,
   `idproprietario` INT UNSIGNED NOT NULL,
   `idinquilino` INT UNSIGNED NOT NULL,
-  `valor_aluguel` DECIMAL(7,2) UNSIGNED NOT NULL,
   PRIMARY KEY (`idcontrato`),
   CONSTRAINT `fk_contrato_imovel1`
     FOREIGN KEY (`idimovel`)
@@ -208,7 +206,12 @@ CREATE INDEX `fk_contrato_proprietario1_idx` ON `mydb`.`contrato` (`idproprietar
 
 CREATE INDEX `fk_contrato_inquilino1_idx` ON `mydb`.`contrato` (`idinquilino` ASC) ;
 
-
+/*!40000 ALTER TABLE `contrato` DISABLE KEYS */;
+INSERT INTO `contrato` (`idcontrato`, `numero_do_contrato`,`quantidade_de_meses`,`status`,`idimovel`,`idproprietario`,`idinquilino`) VALUES 
+(1,100,12,1,1,1,1),
+(2,100,12,1,2,2,2),
+(3,100,12,1,3,3,3);
+/*!40000 ALTER TABLE `contrato` ENABLE KEYS */;
 -- -----------------------------------------------------
 -- Table `mydb`.`estado`
 -- -----------------------------------------------------
