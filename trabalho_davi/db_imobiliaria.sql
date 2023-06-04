@@ -214,7 +214,13 @@ CREATE INDEX `fk_contrato_proprietario1_idx` ON `mydb`.`contrato` (`idproprietar
 
 CREATE INDEX `fk_contrato_inquilino1_idx` ON `mydb`.`contrato` (`idinquilino` ASC) ;
 
+/*!40000 ALTER TABLE `contrato` DISABLE KEYS */;
+INSERT INTO `contrato` (`idcontrato`, `numero_do_contrato`,`quantidade_de_meses`,`status`,`idimovel`,`idproprietario`,`idinquilino`) VALUES 
+(1,100,12,1,1,1,1),
+(2,100,12,1,2,2,2),
+(3,100,12,1,3,3,3);
 
+/*!40000 ALTER TABLE `contrato` ENABLE KEYS */;
 -- -----------------------------------------------------
 -- Table `mydb`.`estado`
 -- -----------------------------------------------------
