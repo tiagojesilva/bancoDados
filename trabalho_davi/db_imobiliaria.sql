@@ -95,6 +95,12 @@ CREATE UNIQUE INDEX `idbairro_UNIQUE` ON `mydb`.`bairro` (`idbairro` ASC) ;
 
 CREATE INDEX `fk_bairro_cidade1_idx` ON `mydb`.`bairro` (`idcidade` ASC) ;
 
+/*!40000 ALTER TABLE `bairro` DISABLE KEYS */;
+INSERT INTO `bairro` (`idbairro`,`nome`,`idcidade`) VALUES 
+(1,'Bairro_A',1),
+(2,'Bairro_B',2),
+(3,'Bairro_C',3);
+/*!40000 ALTER TABLE `bairro` ENABLE KEYS */;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`casa`
@@ -155,6 +161,7 @@ CREATE INDEX `fk_cidade_estado1_idx` ON `mydb`.`cidade` (`idcidade` ASC) ;
 -- Definition of table `cidade`
 --
 
+
 /*!40000 ALTER TABLE `cidade` DISABLE KEYS */;
 INSERT INTO `cidade` (`idcidade`,`nome`,`idestado`) VALUES 
  (1,'Feijó',1),
@@ -180,6 +187,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`contrato` (
   `idimovel` INT UNSIGNED NOT NULL,
   `idproprietario` INT UNSIGNED NOT NULL,
   `idinquilino` INT UNSIGNED NOT NULL,
+  `valor_aluguel` DECIMAL(7,2) UNSIGNED NOT NULL,
   PRIMARY KEY (`idcontrato`),
   CONSTRAINT `fk_contrato_imovel1`
     FOREIGN KEY (`idimovel`)
@@ -206,12 +214,7 @@ CREATE INDEX `fk_contrato_proprietario1_idx` ON `mydb`.`contrato` (`idproprietar
 
 CREATE INDEX `fk_contrato_inquilino1_idx` ON `mydb`.`contrato` (`idinquilino` ASC) ;
 
-/*!40000 ALTER TABLE `contrato` DISABLE KEYS */;
-INSERT INTO `contrato` (`idcontrato`, `numero_do_contrato`,`quantidade_de_meses`,`status`,`idimovel`,`idproprietario`,`idinquilino`) VALUES 
-(1,100,12,1,1,1,1),
-(2,100,12,1,2,2,2),
-(3,100,12,1,3,3,3);
-/*!40000 ALTER TABLE `contrato` ENABLE KEYS */;
+
 -- -----------------------------------------------------
 -- Table `mydb`.`estado`
 -- -----------------------------------------------------
@@ -280,7 +283,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`imovel` (
   `numero_do_local` INT(4) UNSIGNED NOT NULL,
   `data_vencimento_aluguel` DATE NOT NULL,
   `idpredio` INT UNSIGNED NOT NULL,
-  `metros_quadrados` DECIMAL(3,2) UNSIGNED NOT NULL,
+  `metros_quadrados` DECIMAL(5,2) UNSIGNED NOT NULL,
   `garagem` TINYINT(1) UNSIGNED NULL,
   PRIMARY KEY (`idimovel`),
   CONSTRAINT `fk_imovel_predio1`
@@ -294,20 +297,13 @@ CREATE UNIQUE INDEX `idimovel_UNIQUE` ON `mydb`.`imovel` (`idimovel` ASC) ;
 
 CREATE INDEX `fk_imovel_predio1_idx` ON `mydb`.`imovel` (`idpredio` ASC) ;
 
---
--- Definition of table `nome_tabela_aSer_inserida`
---
-
-
 /*!40000 ALTER TABLE `imovel` DISABLE KEYS */;
 INSERT INTO `imovel` (`idimovel`,`quantidade_quartos`,`valor_condominio`,`valor_aluguel`,`numero_do_local`,`data_vencimento_aluguel`,`idpredio`,`metros_quadrados`,`garagem`) VALUES 
- (1,1,'2.1','2.1',2,'1980-01-01 00:00:00',1,'3.1',1);
+(1,2,900.00,100.00,10,'2020-10-01',1,20.00,1),
+(2,2,900.00,100.00,10,'2020-10-01',1,20.00,1),
+(3,1,800.00,90.00,10,'2020-10-01',1,20.00,0);
 /*!40000 ALTER TABLE `imovel` ENABLE KEYS */;
 
-
---
--- Definition of table `nome_proxima_tabela_aSer_criada`
---
 -- -----------------------------------------------------
 -- Table `mydb`.`inquilino`
 -- -----------------------------------------------------
@@ -387,21 +383,6 @@ CREATE TABLE IF NOT EXISTS `mydb`.`ponto_comercial` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
---
--- Definition of table `ponto_comercial`
---
-
-
-/*!40000 ALTER TABLE `ponto_comercial` DISABLE KEYS */;
-INSERT INTO `ponto_comercial` (`localizacao`,`idimovel`) VALUES 
- (1,1),
- (2,2);
-/*!40000 ALTER TABLE `ponto_comercial` ENABLE KEYS */;
-
-
---
--- Definition of table `predio`
---
 
 -- -----------------------------------------------------
 -- Table `mydb`.`predio`
