@@ -369,6 +369,22 @@ ENGINE = InnoDB;
 
 CREATE INDEX `fk_pessoa_fisica_inquilino1_idx` ON `mydb`.`pessoa_fisica` (`idinquilino` ASC) ;
 
+--
+-- Definition of table `pessoa_fisica`
+--
+
+
+/*!40000 ALTER TABLE `pessoa_fisica` DISABLE KEYS */;
+INSERT INTO `pessoa_fisica` (`cpf`,`idinquilino`) VALUES 
+ (12365412,1),
+ (98654123,2),
+ (65415978,3);
+/*!40000 ALTER TABLE `pessoa_fisica` ENABLE KEYS */;
+
+
+--
+-- Definition of table `pessoa_juridica`
+--
 
 -- -----------------------------------------------------
 -- Table `mydb`.`pessoa_juridica`
@@ -388,6 +404,23 @@ ENGINE = InnoDB;
 
 CREATE INDEX `fk_pessoa_fisica_copy1_inquilino1_idx` ON `mydb`.`pessoa_juridica` (`idinquilino` ASC) ;
 
+
+--
+-- Definition of table `pessoa_juridica`
+--
+
+
+/*!40000 ALTER TABLE `pessoa_juridica` DISABLE KEYS */;
+INSERT INTO `pessoa_juridica` (`cnpj`,`idinquilino`) VALUES 
+ (12351651231,1),
+ (65132588941,2),
+ (15964186413,3);
+/*!40000 ALTER TABLE `pessoa_juridica` ENABLE KEYS */;
+
+
+--
+-- Definition of table `ponto_comercial`
+--
 
 -- -----------------------------------------------------
 -- Table `mydb`.`ponto_comercial`
@@ -485,6 +518,17 @@ CREATE UNIQUE INDEX `idproprietario_UNIQUE` ON `mydb`.`proprietario` (`idproprie
 
 CREATE INDEX `fk_proprietario_Login1_idx` ON `mydb`.`proprietario` (`Login_idLogin` ASC) ;
 
+--
+-- Definition of table `proprietario`
+--
+
+
+/*!40000 ALTER TABLE `proprietario` DISABLE KEYS */;
+INSERT INTO `proprietario` (`idproprietario`,`nome`,`cpf`,`chave_pix`,`Login_idLogin`) VALUES 
+ (1,'Daniela',12365487,'daniela@uneb.com.br',1),
+ (2,'Davi',65498712,'davi@gmail.com',2),
+ (3,'Tiago',95135745,'tiago@outlook.com',3);
+/*!40000 ALTER TABLE `proprietario` ENABLE KEYS */;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
