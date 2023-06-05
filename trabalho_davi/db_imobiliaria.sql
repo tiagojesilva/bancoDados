@@ -47,14 +47,29 @@ ENGINE = InnoDB;
 /*!40000 ALTER TABLE `Login` DISABLE KEYS */;
 INSERT INTO `Login` (`idLogin`,`nome`,`senha`,`tipo_usuario`) VALUES 
  (1,'joao','jo@013l4',1),
- (2,'hernandes','herN4nd3s',),
- (3,'tiago','T14g0',2);
+ (2,'hernandes','herN4nd3s',2),
+ (3,'tiago','T14g0',3);
 /*!40000 ALTER TABLE `Login` ENABLE KEYS */;
 
 
 --
 -- Definition of table `apartamento`
 --
+/*	FUNÇÃO DELETE	
+
+DELETE FROM mydb.login WHERE nome='joao'; 
+
+*/
+
+/*
+	FUNÇÃO UPDATE
+    
+	UPDATE Login
+	SET nome = 'Alfred Schmidt' 
+	WHERE idLogin = 1;
+
+*/
+
 -- -----------------------------------------------------
 -- Table `mydb`.`apartamento`
 -- -----------------------------------------------------
@@ -77,6 +92,7 @@ ENGINE = InnoDB;
 -- Definition of table `apartamento`
 --
 
+
 /*!40000 ALTER TABLE `apartamento` DISABLE KEYS */;
 INSERT INTO `apartamento` (`arcondicionado`,`suite`,`andar`,`idimovel`) VALUES 
  (1,1,1,1),
@@ -84,6 +100,21 @@ INSERT INTO `apartamento` (`arcondicionado`,`suite`,`andar`,`idimovel`) VALUES
  (3,1,3,3);
 /*!40000 ALTER TABLE `apartamento` ENABLE KEYS */;
 
+/*	
+	FUNÇÃO DELETE
+
+	DELETE from mydb.apartamento WHERE idimovel = '1';
+    
+*/
+
+/*
+	FUNÇÃO UPDATE
+    
+	UPDATE apartamento
+	SET andar = '2' 
+	WHERE idimovel = 2;
+
+*/
 
 --
 -- Definition of table `bairro`
@@ -117,6 +148,21 @@ INSERT INTO `bairro` (`idbairro`,`nome`,`idcidade`) VALUES
 (3,'Bairro_C',3);
 /*!40000 ALTER TABLE `bairro` ENABLE KEYS */;
 
+/*	
+	FUNÇÃO DELETE
+
+	DELETE from mydb.bairro WHERE idbairro = '1';
+
+*/
+
+/*
+	FUNÇÃO UPDATE
+    
+	UPDATE bairro
+	SET nome = 'Cabula' 
+	WHERE idbairro = 3;
+
+*/
 -- -----------------------------------------------------
 -- Table `mydb`.`casa`
 -- -----------------------------------------------------
@@ -146,7 +192,21 @@ INSERT INTO `casa` (`piscina`,`idimovel`,`porao`) VALUES
  (3,3,'sim');
 /*!40000 ALTER TABLE `casa` ENABLE KEYS */;
 
+/*	
+	FUNÇÃO DELETE
 
+	DELETE from mydb.casa WHERE piscina = '2';
+
+*/
+
+/*
+	FUNÇÃO UPDATE
+    
+	UPDATE casa
+	SET piscina = '7' 
+	WHERE idimovel = 1;
+
+*/
 --
 -- Definition of table `cidade`
 --
@@ -184,6 +244,21 @@ INSERT INTO `cidade` (`idcidade`,`nome`,`idestado`) VALUES
  (3, 'Salvador',3);
 /*!40000 ALTER TABLE `cidade` ENABLE KEYS */;
 
+/*	
+	FUNÇÃO DELETE
+
+	DELETE from mydb.cidade WHERE idcidade = '1';
+
+*/
+
+/*
+	FUNÇÃO UPDATE
+    
+	UPDATE cidade
+	SET nome = 'Smit' 
+	WHERE idcidade = 1;
+
+*/
 
 --
 -- Definition of table `contrato`
@@ -236,6 +311,23 @@ INSERT INTO `contrato` (`idcontrato`, `numero_do_contrato`,`quantidade_de_meses`
 (3,100,12,1,3,3,3);
 
 /*!40000 ALTER TABLE `contrato` ENABLE KEYS */;
+
+/*	
+	FUNÇÃO DELETE
+
+	DELETE from mydb.contrato WHERE idcontrato = '1';
+
+*/
+
+/*
+	FUNÇÃO UPDATE
+    
+	UPDATE contrato
+	SET numero_do_contrato = '200' 
+	WHERE idcontrato = 1;
+
+*/
+
 -- -----------------------------------------------------
 -- Table `mydb`.`estado`
 -- -----------------------------------------------------
@@ -266,7 +358,21 @@ INSERT INTO `estado` (`idestado`,`nome`) VALUES
 -- Definition of table `imagens`
 --
 
+/*	
+	FUNÇÃO DELETE
 
+	DELETE from mydb.estado WHERE idestado = '3';
+
+*/
+
+/*
+	FUNÇÃO UPDATE
+    
+	UPDATE estado
+	SET nome = 'New York' 
+	WHERE idestado = 1;
+
+*/
 -- -----------------------------------------------------
 -- Table `mydb`.`imagens`
 -- -----------------------------------------------------
@@ -302,6 +408,21 @@ INSERT INTO `imagens` (`idimagens`,`conteudo`,`idimovel`,`descricao`) VALUES
  (3,'C:\Users\Desktop\Images\imagem3.jpg',3,'Imagem do quarto');
 /*!40000 ALTER TABLE `imagens` ENABLE KEYS */;
 
+/*	
+	FUNÇÃO DELETE
+
+	DELETE from mydb.imagens WHERE idimagens = '2';
+
+*/
+
+/*
+	FUNÇÃO UPDATE
+    
+	UPDATE imagens
+	SET descricao = 'Homens de Terno' 
+	WHERE idimagens = 1;
+
+*/
 
 --
 -- Definition of table `imovel`
@@ -341,6 +462,22 @@ INSERT INTO `imovel` (`idimovel`,`quantidade_quartos`,`valor_condominio`,`valor_
 (3,1,800.00,90.00,10,'2020-08-01',1,20.00,0);
 /*!40000 ALTER TABLE `imovel` ENABLE KEYS */;
 
+/*	
+	FUNÇÃO DELETE
+
+	DELETE from mydb.imovel WHERE idimovel = '2';
+
+*/
+
+/*
+	FUNÇÃO UPDATE
+    
+	UPDATE imovel
+	SET valor_condominio = '77.77' 
+	WHERE idimovel = 1;
+
+*/
+
 -- -----------------------------------------------------
 -- Table `mydb`.`inquilino`
 -- -----------------------------------------------------
@@ -371,6 +508,23 @@ INSERT INTO `inquilino` ( `idinquilino`,`nome`, `celular1`, `celular2`, `e-mail`
 (2,'Tiago Silva',999999992,988888882,'tiago@email.com',2),
 (3,'Adeonita Souza',999999993,988888883,'ade@email.com',3);
 /*!40000 ALTER TABLE `inquilino` ENABLE KEYS */;
+
+/*	
+	FUNÇÃO DELETE
+
+	DELETE from mydb.inquilino WHERE idinquilino = '1';
+
+*/
+
+/*
+	FUNÇÃO UPDATE
+    
+	UPDATE inquilino
+	SET nome = 'Afrikana Leire' 
+	WHERE idinquilino = 3;
+
+*/
+
 -- -----------------------------------------------------
 -- Table `mydb`.`pessoa_fisica`
 -- -----------------------------------------------------
@@ -401,7 +555,21 @@ INSERT INTO `pessoa_fisica` (`cpf`,`idinquilino`) VALUES
  (65415978,3);
 /*!40000 ALTER TABLE `pessoa_fisica` ENABLE KEYS */;
 
+/*	
+	FUNÇÃO DELETE
 
+	DELETE from mydb.pessoa_fisica WHERE cpf = '98654123';
+
+*/
+
+/*
+	FUNÇÃO UPDATE
+    
+	UPDATE pessoa_fisica
+	SET cpf = '15463257' 
+	WHERE idinquilino = 1;
+
+*/
 --
 -- Definition of table `pessoa_juridica`
 --
@@ -437,6 +605,21 @@ INSERT INTO `pessoa_juridica` (`cnpj`,`idinquilino`) VALUES
  (15964186413,3);
 /*!40000 ALTER TABLE `pessoa_juridica` ENABLE KEYS */;
 
+/*	
+	FUNÇÃO DELETE
+
+	DELETE from mydb.pessoa_juridica WHERE cnpj = '12351651231';
+
+*/
+
+/*
+	FUNÇÃO UPDATE
+    
+	UPDATE pessoa_juridica
+	SET cnpj = '1114447777' 
+	WHERE idinquilino = 1;
+
+*/
 
 --
 -- Definition of table `ponto_comercial`
@@ -469,6 +652,21 @@ INSERT INTO `ponto_comercial` (`localizacao`,`idimovel`) VALUES
  (2,2);
 /*!40000 ALTER TABLE `ponto_comercial` ENABLE KEYS */;
 
+/*	
+	FUNÇÃO DELETE
+
+	DELETE from mydb.ponto_comercial WHERE localizacao = '1';
+
+*/
+
+/*
+	FUNÇÃO UPDATE
+    
+	UPDATE ponto_comercial
+	SET localizacao = '7' 
+	WHERE idimovel = 1;
+
+*/
 
 --
 -- Definition of table `predio`
@@ -510,6 +708,21 @@ INSERT INTO `predio` (`idpredio`,`nome`,`Endereco`,`CEP`,`quantidade_apartamento
  (3,'Irani','Rua das Irani',65432158,5,3);
 /*!40000 ALTER TABLE `predio` ENABLE KEYS */;
 
+/*	
+	FUNÇÃO DELETE
+
+	DELETE from mydb.predio WHERE idpredio = '2';
+
+*/
+
+/*
+	FUNÇÃO UPDATE
+    
+	UPDATE predio
+	SET nome = 'Alfred' 
+	WHERE idpredio = 3;
+
+*/
 
 --
 -- Definition of table `proprietario`
@@ -549,6 +762,31 @@ INSERT INTO `proprietario` (`idproprietario`,`nome`,`cpf`,`chave_pix`,`Login_idL
  (2,'Hernandes Santiago',65498712,'hernandes"email.com',2),
  (3,'Maurício Novais',95135745,'mauricio@email.com',3);
 /*!40000 ALTER TABLE `proprietario` ENABLE KEYS */;
+
+
+/*	
+	FUNÇÃO DELETE
+
+	DELETE from mydb.proprietario WHERE idproprietario = '3';
+
+*/
+
+/*
+
+UPDATE proprietario
+SET nome = 'Alfred Schmidt'
+WHERE idproprietario = 3;
+
+*/
+
+/*
+	FUNÇÃO UPDATE
+    
+	UPDATE proprietario
+	SET nome = 'Juras' 
+	WHERE idproprietario = 2;
+
+*/
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
